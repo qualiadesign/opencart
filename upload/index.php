@@ -216,8 +216,7 @@ $registry->set('length', new Length($registry));
 $registry->set('cart', new Cart($registry));
 
 // Encryption
-$encryption = new Encryption($config->get('config_encryption'));
-$registry->set('encryption', $encryption);
+$registry->set('encryption', new Encryption($config->get('config_encryption')));
 		
 // Front Controller 
 $controller = new Front($registry);
