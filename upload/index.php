@@ -226,7 +226,7 @@ $controller = new Front($registry);
 $controller->addPreAction(new Action('common/maintenance'));
 
 // SSL
-$controller->addPreAction(new Action('common/ssl'));
+$controller->addPreAction(new Action('common/shared'));
 
 // SEO URL's
 $controller->addPreAction(new Action('common/seo_url'));	
