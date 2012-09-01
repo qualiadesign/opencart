@@ -224,6 +224,9 @@ $controller = new Front($registry);
 // Maintenance Mode
 $controller->addPreAction(new Action('common/maintenance'));
 
+// SSL
+$controller->addPreAction(new Action('common/ssl'));
+
 // SEO URL's
 $controller->addPreAction(new Action('common/seo_url'));	
 	
