@@ -96,12 +96,8 @@
             <th width="15%" align="left"><b>Status</b></th>
           </tr>
           <tr>
-            <td><?php echo $config_catalog; ?></td>
-            <td><?php echo is_writable($config_catalog) ? '<span class="good">Writable</span>' : '<span class="bad">Unwritable</span>'; ?></td>
-          </tr>
-          <tr>
-            <td><?php echo $config_admin; ?></td>
-            <td><?php echo is_writable($config_admin) ? '<span class="good">Writable</span>' : '<span class="bad">Unwritable</span>'; ?></td>
+            <td><?php echo $config_default; ?></td>
+            <td><?php echo is_writable($config_default) ? '<span class="good">Writable</span>' : '<span class="bad">Unwritable</span>'; ?></td>
           </tr>
         </table>
       </div>
@@ -113,27 +109,27 @@
             <th width="15%" align="left"><b>Status</b></th>
           </tr>
           <tr>
-            <td><?php echo $cache . '/'; ?></td>
+            <td><?php echo $cache; ?></td>
             <td><?php echo is_writable($cache) ? '<span class="good">Writable</span>' : '<span class="bad">Unwritable</span>'; ?></td>
           </tr>
           <tr>
-            <td><?php echo $logs . '/'; ?></td>
+            <td><?php echo $logs; ?></td>
             <td><?php echo is_writable($logs) ? '<span class="good">Writable</span>' : '<span class="bad">Unwritable</span>'; ?></td>
           </tr>
           <tr>
-            <td><?php echo $image . '/'; ?></td>
+            <td><?php echo $image; ?></td>
             <td><?php echo is_writable($image) ? '<span class="good">Writable</span>' : '<span class="bad">Unwritable</span>'; ?></td>
           </tr>
           <tr>
-            <td><?php echo $image_cache . '/'; ?></td>
+            <td><?php echo $image_cache; ?></td>
             <td><?php echo is_writable($image_cache) ? '<span class="good">Writable</span>' : '<span class="bad">Unwritable</span>'; ?></td>
           </tr>
           <tr>
-            <td><?php echo $image_data . '/'; ?></td>
+            <td><?php echo $image_data; ?></td>
             <td><?php echo is_writable($image_data) ? '<span class="good">Writable</span>' : '<span class="bad">Unwritable</span>'; ?></td>
           </tr>          
           <tr>
-            <td><?php echo $download . '/'; ?></td>
+            <td><?php echo $download; ?></td>
             <td><?php echo is_writable($download) ? '<span class="good">Writable</span>' : '<span class="bad">Unwritable</span>'; ?></td>
           </tr>
         </table>

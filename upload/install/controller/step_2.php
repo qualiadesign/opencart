@@ -15,15 +15,14 @@ class ControllerStep2 extends Controller {
 		
 		$this->data['action'] = HTTP_SERVER . 'index.php?route=step_2';
 
-		$this->data['config_catalog'] = DIR_OPENCART . 'config.php';
-		$this->data['config_admin'] = DIR_OPENCART . 'admin/config.php';
+		$this->data['config_default'] = DIR_OPENCART . 'config/default.php';
 		
-		$this->data['cache'] = DIR_SYSTEM . 'cache';
-		$this->data['logs'] = DIR_SYSTEM . 'logs';
-		$this->data['image'] = DIR_OPENCART . 'image';
-		$this->data['image_cache'] = DIR_OPENCART . 'image/cache';
-		$this->data['image_data'] = DIR_OPENCART . 'image/data';
-		$this->data['download'] = DIR_OPENCART . 'download';
+		$this->data['cache'] = DIR_CACHE;
+		$this->data['logs'] = DIR_LOGS;
+		$this->data['image'] = DIR_IMAGE;
+		$this->data['image_cache'] = DIR_IMAGE . 'cache/';
+		$this->data['image_data'] = DIR_IMAGE . 'data/';
+		$this->data['download'] = DIR_DOWNLOAD;
 		
 		$this->template = 'step_2.tpl';
 
@@ -68,35 +67,31 @@ class ControllerStep2 extends Controller {
 			$this->error['warning'] = 'Warning: ZLIB extension needs to be loaded for OpenCart to work!';
 		}
 	
-		if (!is_writable(DIR_OPENCART . 'config.php')) {
-			$this->error['warning'] = 'Warning: config.php needs to be writable for OpenCart to be installed!';
-		}
-				
-		if (!is_writable(DIR_OPENCART . 'admin/config.php')) {
-			$this->error['warning'] = 'Warning: admin/config.php needs to be writable for OpenCart to be installed!';
+		if (!is_writable(DIR_OPENCART . 'config/default.php')) {
+			$this->error['warning'] = 'Warning: config/default.php needs to be writable for OpenCart to be installed!';
 		}
 
-		if (!is_writable(DIR_SYSTEM . 'cache')) {
+		if (!is_writable(DIR_CACHE)) {
 			$this->error['warning'] = 'Warning: Cache directory needs to be writable for OpenCart to work!';
 		}
 		
-		if (!is_writable(DIR_SYSTEM . 'logs')) {
+		if (!is_writable(DIR_LOGS)) {
 			$this->error['warning'] = 'Warning: Logs directory needs to be writable for OpenCart to work!';
 		}
 		
-		if (!is_writable(DIR_OPENCART . 'image')) {
+		if (!is_writable(DIR_IMAGE)) {
 			$this->error['warning'] = 'Warning: Image directory needs to be writable for OpenCart to work!';
 		}
 
-		if (!is_writable(DIR_OPENCART . 'image/cache')) {
+		if (!is_writable(DIR_IMAGE . 'cache')) {
 			$this->error['warning'] = 'Warning: Image cache directory needs to be writable for OpenCart to work!';
 		}
 		
-		if (!is_writable(DIR_OPENCART . 'image/data')) {
+		if (!is_writable(DIR_IMAGE . 'data')) {
 			$this->error['warning'] = 'Warning: Image data directory needs to be writable for OpenCart to work!';
 		}
 		
-		if (!is_writable(DIR_OPENCART . 'download')) {
+		if (!is_writable(DIR_DOWNLOAD)) {
 			$this->error['warning'] = 'Warning: Download directory needs to be writable for OpenCart to work!';
 		}
 		
