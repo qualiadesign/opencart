@@ -6,8 +6,8 @@ define('VERSION', '1.5.4');
 require_once('config.php');
 
 // Install 
-if (!defined('DIR_APPLICATION')) {
-	header('Location: ../install/index.php');
+if (!defined('INSTALLED')) {
+	header('Location: ' . HTTP_SERVER . 'install/index.php');
 	exit;
 }
 
@@ -75,7 +75,10 @@ function error_handler($errno, $errstr, $errfile, $errline) {
 			break;
 	}
 		
-	if ($config->get('config_error_display')) {
+	# Allow config file to override store setting
+	if (	( defined('ERROR_DISPLAY') && ERROR_DISPLAY)
+		 || (!defined('ERROR_DISPLAY') && $config->get('config_error_display'))
+	) {
 		echo '<b>' . $error . '</b>: ' . $errstr . ' in <b>' . $errfile . '</b> on line <b>' . $errline . '</b>';
 	}
 	
